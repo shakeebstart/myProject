@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title Page-->
+    <title>Login</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{{ asset('admin/css/font-face.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"
+        media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{{ asset('admin/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+
+    <!-- CSS-->
+    <link href="{{ asset('admin/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet"
+        media="all">
+    <link href="{{ asset('admin/wow/animate.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/slick/slick.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="#">
+                                <img src="{{ asset('admin/images/icon/logo.png') }}" alt="CoolAdmin">
+                            </a>
+                        </div>
+                        <div class="login-form">
+                        {{-- {{$errors}} --}}
+                            <form action="{{ route('update_password') }}" method="post">
+                                @csrf
+                                @method('POST')
+                                
+                                  
+                                </div>
+                                <div class="form-group">
+                                    <label>Old Password</label>
+                                    <input class="au-input au-input--full" type="password" name="old_password"
+                                       id="old_password" placeholder="old Password"  >
+                                       @if($errors->any('old_password'))
+                                       <span class="text-danger">{{ $errors->first('old_password') }}</span>
+                                       @endif
+                                      {{-- @error('old_password')
+                                          <span class="text-danger">{{ $message }}</span>
+                                      @enderror  --}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="au-input au-input--full" type="password" name="password"
+                                       id="password" placeholder="new Password"  >
+                                        @if($errors->any('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                        @endif
+                                       {{-- @error('password')
+                                       <span class="text-danger">{{ $message }}</span>
+                                   @enderror --}}
+                                </div>
+                                <div class="form-group">
+                                    <label>confirm Password</label>
+                                    <input class="au-input au-input--full" type="password" name="confirm_password"
+                                      id="confirm_password"  placeholder="confirm password"  >
+                                      @if($errors->any('confirm_password'))
+                                      <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                      @endif
+                                      {{-- @error('confirm_password')
+                                      <span class="text-danger">{{ $message }}</span>
+                                  @enderror --}}
+                                </div>
+                                <div class="flash-message">
+                                   
+                                </div>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Change
+                                    in</button> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ asset('bootstrap-4.1/popper.min.js') }}"></script>
+    <script src="{{ asset('bootstrap-4.1/bootstrap.min.js') }}"></script>
+    <!-- JS       -->
+    <script src="{{ asset('slick/slick.min.js') }}"></script>
+    <script src="{{ asset('wow/wow.min.js') }}"></script>
+    <script src="{{ asset('animsition/animsition.min.js') }}"></script>
+    <script src="{{ asset('bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ asset('counter-up/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('counter-up/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('chartjs/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('select2/select2.min.js') }}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ asset('admin/js/main.js') }}"></script>
+
+</body>
+
+</html>
+<!-- end document-->
